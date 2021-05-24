@@ -1,13 +1,212 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800&display=swap');
+
+
+* {
+  font-family: 'Montserrat', sans-serif;
+
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+
+body {
+  background           : linear-gradient(180deg, #2E2E2E 0.94%, #4F5039 23.38%, #5E5E3E 38.75%, #666741 57.29%, #9D9F54 71.34%, #FCFF74 100%);
+  background-repeat    : no-repeat;
+  background-size      : cover;
+  height               : 100%;
+  background-attachment: fixed;
+}
+
+.container {
+  display        : flex;
+  justify-content: center;
+  align-content  : center;
+}
+
+.main {
+  background     : linear-gradient(110deg, rgba(255, 255, 255, 0.3) 0%, rgba(255, 255, 255, 0.1) 75%);
+  width          : 80vw;
+  box-shadow     : 0px 4px 4px 10px rgba(49, 49, 49, 0.1);
+  backdrop-filter: blur(40px);
+  border-radius  : 30px;
+
+
+  /* Note        : backdrop-filter has minimal browser support */
+  display              : grid;
+  grid-template-columns: 1fr 3fr 3fr;
+  grid-template-areas  : "CARD RESUME RESUME"
+    "SKILLS RESUME RESUME"
+    "PROJECTS PROJECTS PROJECTS";
+
+}
+
+
+
+.resume {
+  grid-area: RESUME;
+  border   : 1px solid rgb(255, 153, 0);
+
+}
+
+.projects {
+  grid-area: PROJECTS;
+  border   : 1px solid blue;
+}
+
+.card {
+  background   : rgba(255, 255, 255, 0.8);
+  border       : 1px solid #B8B8B8;
+  border-radius: 30px 0px 0px 0px;
+  grid-area    : CARD;
+}
+
+.card-wraper {
+  display  : flex;
+  flex-flow: column;
+}
+
+.card-header {
+  display    : flex;
+  width      : max-content;
+  padding    : 1rem;
+  align-items: center;
+}
+
+.profile-pic {
+  height       : 7rem;
+  width        : 7rem;
+  border-radius: 50%;
+  border       : 2px solid #cacaca;
+}
+
+.card-header-body {
+  padding-left: 1rem;
+  max-width: 13rem;
+}
+
+.primary-text {
+  text-transform: uppercase;
+  font-weight   : 700;
+  letter-spacing: 2px;
+}
+
+.name {
+  width      : 100%;
+  position   : relative;
+  font-weight: 800;
+}
+
+.name::after{
+  top : 100%;
+  left: 0;
+}
+
+.name::after {
+  content                  : '';
+  position                 : absolute;
+  width                    : 100%;
+  height                   : 2px;
+  background-color         : #B8B8B8;
+  animation-name           : namebarAnimation;
+  animation-duration       : 1.2s;
+  animation-iteration-count: 1;
+  transform-origin         : left;
+  transform                : scaleX(1);
+  margin-top               : .5rem;
+  transform-origin         : left;
+  transition               : transform 250ms ease-in 200ms;
+
+}
+
+
+@keyframes namebarAnimation {
+  0% {
+    transform: scaleX(0);
+
+  }
+
+  100% {
+    transform       : scaleX(1);
+    background-color: #BBBBBB;
+
+
+  }
+}
+
+.social-list {
+  padding-left: 1rem;
+}
+
+.secondary-text {
+  display       : block;
+  color         : #7B7B7B;
+  font-weight   : 600;
+  letter-spacing: 1px;
+}
+
+.social-link {
+  padding-left   : .5rem;
+  display        : inline-block;
+  position       : relative;
+  text-decoration: none;
+  color          : #7B7B7B;
+  line-height    : 1.5rem;
+
+}
+
+.icon {
+  padding-right: .78rem;
+}
+
+.social-link:hover {
+  color: #0a66c2;
+}
+
+.social-link::after {
+  top : 50%;
+  left: 0;
+
+}
+
+.skills {
+  grid-area    : SKILLS;
+  background   : linear-gradient(132.91deg, rgba(0, 0, 0, 0.8) 2.27%, rgba(20, 20, 20, 0.696274) 34.4%, rgba(47, 47, 47, 0.552652) 81.69%, rgba(73, 73, 73, 0.411911) 91.89%, rgba(95, 95, 95, 0.3) 100%);
+  box-shadow   : 0px 4px 5px rgba(0, 0, 0, 0.25);
+  border-radius: 0px 0px 0px 30px;
+  display: flex;
+  flex-direction: column;
+}
+
+.skill-wraper,
+.language-wraper{
+  display: flex;
+  flex-direction: column;
+}
+
+.header{
+  color: white;
+  align-self: center;
+
+}
+
+.skill-list{
+  list-style-type: none;
+  padding: 0;
+  align-self: center;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  height: 10rem;
+  align-content: center;
+  justify-content: space-evenly;
+}
+
+.skills-list-item{
+  line-height: 1.5rem;
+  width: fit-content;
+  padding-left: 1rem;
+  color: #FCFF54;
+  list-style: none;
+  text-transform: uppercase;
+  font-size: .9rem;
+  letter-spacing: 1px;
+  font-weight: 700;
 }
