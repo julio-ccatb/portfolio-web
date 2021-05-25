@@ -1,4 +1,5 @@
 import Card from "./components/card";
+import ResumeSection from "./components/resume";
 import SkillsCard from "./components/skills";
 
 
@@ -10,8 +11,8 @@ function App() {
       <div className="container">
         <div className="main">
           <Card />
-          <div className="resume">RESUME</div>
           <SkillsCard />
+          <ResumeSection />
           <div className="projects">PROJECTS</div>
         </div>
       </div>
