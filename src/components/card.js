@@ -1,4 +1,4 @@
-import profile from '../resources/pic-3.jpg';
+import profile from '../resources/20161111_112325.png';
 import { faLinkedinIn } from '@fortawesome/free-brands-svg-icons';
 import { faUser } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';

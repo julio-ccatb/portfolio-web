@@ -15,7 +15,13 @@ body {
   background-attachment: fixed;
 }
 
+p{
+  color: #707070;
+}
+
 .container {
+
+  margin-top     : 60px;
   display        : flex;
   justify-content: center;
   align-content  : center;
@@ -23,7 +29,7 @@ body {
 
 .main {
   background     : linear-gradient(110deg, rgba(255, 255, 255, 0.3) 0%, rgba(255, 255, 255, 0.1) 75%);
-  width          : 80vw;
+  width          : 55vw;
   box-shadow     : 0px 4px 4px 10px rgba(49, 49, 49, 0.1);
   backdrop-filter: blur(40px);
   border-radius  : 30px;
@@ -72,10 +78,11 @@ body {
 }
 
 .profile-pic {
-  height       : 7rem;
-  width        : 7rem;
+  height       : 7.1rem;
+  width        : 7.1rem;
   border-radius: 50%;
   border       : 2px solid #cacaca;
+  object-fit: cover;
 }
 
 .card-header-body {
@@ -87,7 +94,7 @@ body {
   text-transform: uppercase;
   font-weight   : 700;
   letter-spacing: 2px;
-  font-size: 1.2rem;
+  font-size     : 1.2rem;
 }
 
 .name {
@@ -233,6 +240,8 @@ body {
   border-radius     : 15px 15px 15px 15px;
   transition        : ease-in-out;
 
+  cursor: pointer;
+
 
 }
 
@@ -279,6 +288,8 @@ body {
   display        : flex;
   justify-content: space-evenly;
   padding-top    : .5rem;
+  margin-bottom  : 1.5rem;
+
 
 }
 
@@ -289,11 +300,12 @@ body {
   display        : flex;
   justify-content: center;
   align-content  : center;
+
 }
 
 .language-list-item::after {
 
-  margin-top               : .5rem;
+  margin-top               : 1rem;
   position                 : absolute;
   display                  : flex;
   flex-direction           : column;
@@ -336,13 +348,105 @@ body {
   }
 }
 
-.resume-wraper{
-  display: flex;
+.resume-wraper {
+  display       : flex;
   flex-direction: column;
-  width: 100%;
+  width         : 100%;
 }
-.resume-wraper>h2{
+
+.resume-wraper>h2 {
   font-weight: 800;
-  margin-top: 2.3rem;
-  align-self: center;
+  margin-top : 2.3rem;
+  align-self : center;
+}
+
+.section-header {
+  padding: 0px 1.5rem;
+}
+
+.education-list-item,
+.work-list-item {
+  list-style     : none;
+  display        : flex;
+  flex-wrap      : nowrap;
+  width          : 90%;
+  justify-content: left;
+  margin-bottom  : 1.5rem;
+  transition     : all ease-in-out;
+}
+
+.education-list-item:hover .sumary::after,
+.work-list-item:hover .sumary::after {
+
+  transition: 1.5s ease-in-out;
+  filter    : hue-rotate(110deg);
+  transform : scaleY(1.5);
+}
+
+.date-place {
+  padding-right: 1rem;
+  width        : 8.7rem;
+}
+
+.date-place>h3,
+.sumary>h3,
+.date-place>h4,
+.sumary>h4 {
+  border : 0;
+  margin : 0;
+  padding: 0;
+}
+
+.date-place>h3,
+.sumary>h3 {
+  font-size  : 1.4rem;
+  font-weight: 400;
+  color      : #707070;
+}
+
+.date-place>h4,
+.sumary>h4 {
+
+  font-size  : 1rem;
+  font-weight: 400;
+  color      : #707070;
+}
+
+.sumary {
+
+  padding-left: 1rem;
+  position    : relative;
+}
+
+.sumary::after {
+  top             : 28%;
+  bottom          : 0;
+  right           : 0;
+  left            : 0;
+  content         : '';
+  position        : absolute;
+  height          : 50%;
+  width           : 2px;
+  background-color: #0a66c2;
+}
+
+.work-info {
+  width: 50%;
+}
+
+.buttons {
+  margin-left    : 2rem;
+  display        : flex;
+  flex-direction : column;
+  width          : fit-content;
+  background     : transparent;
+  justify-content: space-evenly;
+  color          : #7B7B7B;
+
+}
+
+.btn:hover {
+  transition: 350ms ease-in;
+  color     : #2E2E2E;
+  cursor    : pointer;
 }

@@ -13,7 +13,7 @@ function App() {
           <Card />
           <SkillsCard />
           <ResumeSection />
-          <div className="projects">PROJECTS</div>
+          {/* <div className="projects">PROJECTS</div> */}
         </div>
       </div>
     </div>
