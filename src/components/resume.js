@@ -27,7 +27,7 @@ const ResumeSection = () => {
 
     const works = [
         { date_range: '2019-TODAY', city: 'Santo Domingo', place: 'Ozono Quimicos', work: 'Software Developer', description: 'Developing a production control system for the manufacturing area.' },
-        { date_range: '2019-2020', city: 'Santo Domingo', place: 'Soluflex', work: 'Database Support', description: 'Mainly play the role of contact of the company at the Ney Arias Lora Hospital, in addition to supporting bases data and act as technical support of the application GeMedi.' },
+        { date_range: '2019-2020', city: 'Santo Domingo', place: 'Soluflex', work: 'Database Support', description: 'Mainly play the role of contact of the company at the Ney Arias Lora Hospital, in addition to supporting databases and act as technical support of the application GeMedi.' },
         { date_range: '2016-2018', city: 'Santo Domingo', place: 'Amerident Group', work: 'Cashier', description: 'Mainly, I worked as a front-line cashier, being the one in charge of opening the shifts in addition to training the new cashiers assigned to that area, adding to this various temporary rotations to the administrative areas.' }
     ]
 

@@ -3,19 +3,30 @@
 
 * {
   font-family: 'Montserrat', sans-serif;
-  font-size  : 16px;
+  font-size  : 18px;
 }
 
 
 body {
-  background           : linear-gradient(180deg, #2E2E2E 0.94%, #4F5039 23.38%, #5E5E3E 38.75%, #666741 57.29%, #9D9F54 71.34%, #FCFF74 100%);
+  background-image     : linear-gradient(to right bottom, #2e2e2e, #262626, #1f1f1f, #181818, #101010, #231c23, #3d242d, #562f2d, #93543c, #c88341, #edbd44, #fcff54);
   background-repeat    : no-repeat;
-  background-size      : cover;
+  background-size      : 900%;
   height               : 100%;
   background-attachment: fixed;
+  animation            : bg-animation 60s infinite alternate;
 }
 
-p{
+@keyframes bg-animation {
+  0% {
+    background-position: left;
+  }
+
+  100% {
+    background-position: right;
+  }
+}
+
+p {
   color: #707070;
 }
 
@@ -29,7 +40,7 @@ p{
 
 .main {
   background     : linear-gradient(110deg, rgba(255, 255, 255, 0.3) 0%, rgba(255, 255, 255, 0.1) 75%);
-  width          : 55vw;
+  width          : 60rem;
   box-shadow     : 0px 4px 4px 10px rgba(49, 49, 49, 0.1);
   backdrop-filter: blur(40px);
   border-radius  : 30px;
@@ -82,7 +93,7 @@ p{
   width        : 7.1rem;
   border-radius: 50%;
   border       : 2px solid #cacaca;
-  object-fit: cover;
+  object-fit   : cover;
 }
 
 .card-header-body {
