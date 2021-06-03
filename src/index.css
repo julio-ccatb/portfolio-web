@@ -8,9 +8,9 @@
 
 
 body {
-  background-image     : linear-gradient(to right bottom, #2e2e2e, #262626, #1f1f1f, #181818, #101010, #231c23, #3d242d, #562f2d, #93543c, #c88341, #edbd44, #fcff54);
+  background-image     : linear-gradient(to left top , #2e2e2e, #262626, #1f1f1f, #181818, #101010, #231c23, #3d242d, #562f2d, #93543c, #c88341, #edbd44, #fcff54);
   background-repeat    : no-repeat;
-  background-size      : 900%;
+  background-size      : 1100%;
   height               : 100%;
   background-attachment: fixed;
   animation            : bg-animation 60s infinite alternate;
@@ -18,11 +18,11 @@ body {
 
 @keyframes bg-animation {
   0% {
-    background-position: left;
+    background-position: right bottom;
   }
 
   100% {
-    background-position: right;
+    background-position: left top;
   }
 }
 
@@ -33,6 +33,7 @@ p {
 .container {
 
   margin-top     : 60px;
+  margin-bottom  : 60px;
   display        : flex;
   justify-content: center;
   align-content  : center;
@@ -61,12 +62,21 @@ p {
   grid-area    : RESUME;
   background   : linear-gradient(112.49deg, rgba(255, 255, 255, 0.8) 47.69%, rgba(255, 255, 255, 0.05) 98.68%);
   border-radius: 0px 30px 30px 0px;
-
+  z-index      : 10;
 }
 
 .projects {
-  grid-area: PROJECTS;
-  border   : 1px solid blue;
+  grid-area      : PROJECTS;
+  display        : flex;
+  justify-content: center;
+  height         : max-content;
+  background     : linear-gradient(180deg, rgba(196, 196, 196, 0) 0%, rgba(69, 69, 69, 0.419997) 30%, rgba(41, 41, 41, 0.51445) 40%, rgba(30, 30, 30, 0.550099) 50%, rgba(20, 20, 20, 0.58382) 60%, rgba(14, 14, 14, 0.604528) 80%, rgba(0, 0, 0, 0.65) 100%);
+  border-radius  : 0px 0px 30px 30px;
+  position       : fixed;
+  width          : 100%;
+  top            : -2.5rem;
+  z-index        : 9;
+  box-shadow     : 4px 4px 5px rgba(49, 49, 49, 0.1);
 }
 
 .card {
@@ -188,12 +198,14 @@ p {
   border-radius : 0px 0px 0px 30px;
   display       : flex;
   flex-direction: column;
+  z-index       : 10;
 }
 
 .skill-wraper,
 .language-wraper {
   display       : flex;
   flex-direction: column;
+  height        : 15.5rem;
 }
 
 .header {
@@ -384,6 +396,12 @@ p {
   justify-content: left;
   margin-bottom  : 1.5rem;
   transition     : all ease-in-out;
+  animation      : rollout .4s;
+
+}
+
+.work-list-item {
+  animation: rollout .4s;
 }
 
 .education-list-item:hover .sumary::after,
@@ -445,6 +463,19 @@ p {
   width: 50%;
 }
 
+
+@keyframes rollout {
+  0% {
+    transform: translateY(100px);
+    opacity  : 0;
+  }
+
+  100% {
+    transform: translateY(0);
+    opacity  : 1;
+  }
+}
+
 .buttons {
   margin-left    : 2rem;
   display        : flex;
@@ -452,7 +483,7 @@ p {
   width          : fit-content;
   background     : transparent;
   justify-content: space-evenly;
-  color          : #7B7B7B;
+  color          : #5e5e5e;
 
 }
 
@@ -460,4 +491,144 @@ p {
   transition: 350ms ease-in;
   color     : #2E2E2E;
   cursor    : pointer;
+}
+
+.projects-wraper {
+  padding-top   : 3rem;
+  width         : 90%;
+  display       : flex;
+  flex-direction: column;
+  align-items   : center;
+  margin-bottom : 3rem;
+}
+
+.selected-project {
+  display    : flex;
+  align-items: center;
+  animation  : rollout .4s;
+}
+
+
+.project-header {
+  display        : flex;
+  width          : 48%;
+  height         : fit-content;
+  align-content  : center;
+  justify-content: center;
+  align-items    : center;
+  position       : relative;
+}
+
+.project-header::before,
+.project-header::after {
+  content      : '';
+  position     : absolute;
+  top          : .25rem;
+  left         : .25rem;
+  right        : .25rem;
+  bottom       : .25rem;
+  transition   : transform ease-out 300ms;
+  border-radius: 10px;
+}
+
+.project-header::after {
+  transform    : scale(0, 1);
+  border-top   : 3px solid #FCFF54;
+  border-bottom: 3px solid #FCFF54;
+}
+
+.project-header::before {
+  transform   : scale(1, 0);
+  border-right: 3px solid #FCFF54;
+  border-left : 3px solid #FCFF54;
+}
+
+.project-header:hover:before {
+  transform: scale(1, 1);
+}
+
+.project-header:hover:after {
+  transform: scale(1, 1);
+}
+
+.project-img {
+
+  height       : 90%;
+  width        : 100%;
+  border-radius: 10px;
+}
+
+.project-info {
+  margin-left: 1rem;
+  width      : 48%;
+}
+
+.project-info>p {
+  color: #B8B8B8;
+}
+
+
+.tecnologies {
+  display        : flex;
+  justify-content: space-around;
+}
+
+.badge {
+  text-decoration : none;
+  background-color: #10101040;
+  color           : #FCFF54;
+  display         : flex;
+  width           : fit-content;
+  padding         : .4rem;
+  padding-right   : 1.2rem;
+  padding-left    : .7rem;
+  font-size       : .8rem;
+  border-radius   : 30px;
+  align-items     : center;
+  font-weight     : 900;
+  margin-bottom   : .2rem;
+  transition      : ease-in-out 250ms;
+  transform       : scale(.85);
+
+}
+
+.badge:hover {
+  background-color: #FCFF54;
+  color           : #101010;
+}
+
+.btns {
+  display        : flex;
+  justify-content: center;
+
+}
+
+.btn-acces {
+  border-radius   : 30px;
+  background-color: #10101040;
+  text-decoration : none;
+  padding         : .6rem;
+  font-weight     : 900;
+  transition      : ease-in-out 250ms;
+  transform       : scale(.85);
+  margin          : .6rem;
+}
+
+.goto-0 {
+  color: #0a66c2;
+
+}
+
+.goto-1 {
+  color: #91E571;
+}
+
+.goto-0:hover {
+  background-color: #0a66c2;
+  color           : #101010;
+}
+
+.goto-1:hover {
+  background-color: #91E571;
+  color           : #101010;
 }

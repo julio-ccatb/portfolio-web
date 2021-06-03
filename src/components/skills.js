@@ -1,20 +1,13 @@
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faAngular, faNodeJs, faJs, faReact, faWordpressSimple, faJava } from '@fortawesome/free-brands-svg-icons'
-import { faDatabase, faCode } from '@fortawesome/free-solid-svg-icons';
-import React, { useState } from 'react'
+
+import React, { useState, useContext } from 'react'
+import SkillItem from './skilli_item';
+import { GeneralContext } from "../context/general.context";
 
 const SkillsCard = () => {
 
-    const initialState = [
-        { status: 'intermediate', skill: 'Wordpress', icon: faWordpressSimple, id: 0, hovered: false },
-        { status: 'Advanced', skill: 'NodeJs', icon: faNodeJs, id: 1, hovered: false },
-        { status: 'intermediate', skill: 'React', icon: faReact, id: 2, hovered: false },
-        { status: 'Advanced', skill: 'Javascript', icon: faJs, id: 3, hovered: false },
-        { status: 'intermediate', skill: 'Java', icon: faJava, id: 4, hovered: false },
-        { status: 'Advanced', skill: 'C#', icon: faCode, id: 5, hovered: false },
-        { status: 'intermediate', skill: 'Angular', icon: faAngular, id: 6, hovered: false },
-        { status: 'Advanced', skill: 'SQL/NoSQL', icon: faDatabase, id: 7, hovered: false }
-    ]
+    const { skills1 } = useContext(GeneralContext)
+    let initialState = skills1
+
     const [skills, setskill] = useState(initialState)
     const styleFix = {
         color: "white",
@@ -41,25 +34,17 @@ const SkillsCard = () => {
                 <h2 className="primary-text header">skills</h2>
                 <ul className="skill-list">
                     {
-                        skills.map((skill) => {
+                        skills ? skills.map((skill) => {
 
                             return (
-                                <li
-                                    onMouseLeave={statusToggler}
-                                    onMouseEnter={statusToggler}
-                                    status={skill.status}
-                                    className={`skills-list-item ${skill.hovered ? 'status' : ''}`}
-                                    id={skill.id}
-                                    key={skill.id} >
-                                    <FontAwesomeIcon
-                                        style={styleFix}
-                                        className="icon"
-                                        size="2x"
-                                        icon={skill.icon} />
-                                    {skill.skill}
-                                </li>
+                                <SkillItem
+                                    iconSize="2x"
+                                    customClass={`skills-list-item ${skill.hovered ? 'status' : ''}`}
+                                    styleFix={styleFix}
+                                    statusToggler={statusToggler}
+                                    skill={skill} />
                             )
-                        })
+                        }) : ''
                     }
                 </ul>
             </div>

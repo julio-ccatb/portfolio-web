@@ -1,6 +1,8 @@
 import Card from "./components/card";
+import Projects from "./components/projects";
 import ResumeSection from "./components/resume";
 import SkillsCard from "./components/skills";
+import GeneralContextProvider from "./context/general.context";
 
 
 function App() {
@@ -10,10 +12,12 @@ function App() {
       </header>
       <div className="container">
         <div className="main">
-          <Card />
-          <SkillsCard />
-          <ResumeSection />
-          {/* <div className="projects">PROJECTS</div> */}
+          <GeneralContextProvider>
+            <Card />
+            <SkillsCard />
+            <ResumeSection />
+            <Projects />
+          </GeneralContextProvider>
         </div>
       </div>
     </div>

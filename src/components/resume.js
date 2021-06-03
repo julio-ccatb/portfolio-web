@@ -45,7 +45,7 @@ const ResumeSection = () => {
             <div className="work">
                 <h2 className="primary-text section-header">Work Experience</h2>
                 <ul className="work-list">
-                    <li className="work-list-item">
+                    <li key={index} className="work-list-item">
                         <Work work={works[index]} />
                         <div className="buttons">
                             <FontAwesomeIcon

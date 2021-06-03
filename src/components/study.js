@@ -15,4 +15,4 @@ const Study = ({study})=>{
     )
 }
 
-export default Study;
+export default Study
