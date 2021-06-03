@@ -1,6 +1,6 @@
 
 import React, { useState, useContext } from 'react'
-import SkillItem from './skilli_item';
+import SkillItem from './subComponents/skilli_item';
 import { GeneralContext } from "../context/general.context";
 
 const SkillsCard = () => {

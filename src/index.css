@@ -8,7 +8,7 @@
 
 
 body {
-  background-image     : linear-gradient(to left top , #2e2e2e, #262626, #1f1f1f, #181818, #101010, #231c23, #3d242d, #562f2d, #93543c, #c88341, #edbd44, #fcff54);
+  background-image     : linear-gradient(to left top, #2e2e2e, #262626, #1f1f1f, #181818, #101010, #231c23, #3d242d, #562f2d, #93543c, #c88341, #edbd44, #fcff54);
   background-repeat    : no-repeat;
   background-size      : 1100%;
   height               : 100%;
@@ -37,6 +37,60 @@ p {
   display        : flex;
   justify-content: center;
   align-content  : center;
+  position       : relative;
+}
+
+.contactball {
+  top            : 10%;
+  right          : 8%;
+  position       : fixed;
+  height         : 5.2rem;
+  width          : 5.2rem;
+  border-radius  : 50%;
+  display        : flex;
+  justify-content: center;
+  align-items    : center;
+
+  background-color: rgba(150, 150, 150, .1);
+  transition      : ease-in-out 250ms;
+  z-index         : 10;
+
+
+}
+
+.contactball::before {
+  content      : '';
+  position     : absolute;
+  height       : 110%;
+  width        : 110%;
+  border       : 6px solid #fcff54;
+  border-radius: 50%;
+  opacity      : .3;
+  transition   : ease-in-out 250ms;
+
+}
+
+
+.contactball:hover {
+  filter: blur(.5px);
+}
+
+.contactball:hover::before {
+  opacity: .9;
+}
+
+.contactball:hover .ball-icon {
+  opacity: .9;
+}
+
+.ball-icon {
+  text-align    : center;
+  color         : #f00;
+  -webkit-filter: invert(100%);
+  opacity       : .5;
+  filter        : invert(100%);
+  transition    : ease-in-out 250ms;
+  transform     : scale(1.4);
 }
 
 .main {
@@ -428,7 +482,7 @@ p {
 
 .date-place>h3,
 .sumary>h3 {
-  font-size  : 1.4rem;
+  font-size  : 1.3rem;
   font-weight: 400;
   color      : #707070;
 }
@@ -512,7 +566,7 @@ p {
 .project-header {
   display        : flex;
   width          : 48%;
-  height         : fit-content;
+  height         : 95%;
   align-content  : center;
   justify-content: center;
   align-items    : center;
@@ -553,13 +607,13 @@ p {
 
 .project-img {
 
-  height       : 90%;
+  height       : 100%;
   width        : 100%;
   border-radius: 10px;
 }
 
 .project-info {
-  margin-left: 1rem;
+  margin-left: 1.5rem;
   width      : 48%;
 }
 

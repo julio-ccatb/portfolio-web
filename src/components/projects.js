@@ -1,6 +1,6 @@
 import { useContext, useState } from "react"
 import { GeneralContext } from "../context/general.context"
-import SkillItem from "./skilli_item"
+import SkillItem from "./subComponents/skilli_item"
 
 
 
@@ -10,7 +10,7 @@ const Projects = () => {
     const { skills1 } = useContext(GeneralContext)
     let initialState = skills1
 
-    const [index, setindex] = useState([1, 2, 3,5])
+    const [index, setindex] = useState([1, 2, 3, 5])
 
     return (
         <div className="projects">
@@ -39,8 +39,8 @@ const Projects = () => {
                             }
                         </div>
                         <div className="btns">
-                            <a className="btn-acces goto-0" href="#">Acceder</a>
-                            <a className="btn-acces goto-1" href="#">Codigo</a>
+                            <a className="btn-acces goto-0" href="#">Go To</a>
+                            <a className="btn-acces goto-1" href="#">Repo</a>
                         </div>
                     </div>
                 </div>

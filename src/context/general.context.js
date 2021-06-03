@@ -30,4 +30,4 @@ const GeneralContextProvider = ({ children }) => {
     )
 }
 
-export default GeneralContextProvider; 
+export default GeneralContextProvider;

@@ -1,4 +1,5 @@
 import Card from "./components/card";
+import ContactBall from "./components/subComponents/contactball";
 import Projects from "./components/projects";
 import ResumeSection from "./components/resume";
 import SkillsCard from "./components/skills";
@@ -11,6 +12,7 @@ function App() {
       <header className="App-header">
       </header>
       <div className="container">
+        <ContactBall />
         <div className="main">
           <GeneralContextProvider>
             <Card />
