@@ -43,12 +43,11 @@ p {
 }
 
 .container {
-  margin-top: 60px;
+  margin-top: 30px;
   margin-bottom: 60px;
   display: flex;
   justify-content: center;
   align-content: center;
-  position: relative;
 }
 
 .contactball {
@@ -148,7 +147,7 @@ p {
     rgba(0, 0, 0, 0.65) 100%
   );
   border-radius: 0px 0px 30px 30px;
-  position: fixed;
+
   width: 100%;
   top: -2.5rem;
   z-index: 9;
@@ -234,7 +233,7 @@ p {
 
 .secondary-text {
   display: block;
-  color: #7b7b7b;
+  color: #5e5d5d;
   font-weight: 600;
   letter-spacing: 1px;
 }
@@ -490,14 +489,15 @@ p {
 .sumary > h3 {
   font-size: 1.3rem;
   font-weight: 400;
-  color: #707070;
+  color: #606060;
 }
 
 .date-place > h4,
+.date-place > p,
 .sumary > h4 {
   font-size: 1rem;
   font-weight: 400;
-  color: #707070;
+  color: #505050;
 }
 
 .sumary {
@@ -694,6 +694,7 @@ p {
 
 .project-mini {
   flex-basis: 30%;
+  min-width: 180px;
   margin-right: 1rem;
   display: flex;
   flex-direction: column;
@@ -711,4 +712,40 @@ p {
 .img-mini:hover,
 .img-mini:focus {
   opacity: 1;
+}
+
+p {
+  color: #505050;
+}
+
+@media (max-width: 600px) {
+  .main {
+    width: 98%;
+    display: flex;
+    flex-direction: column;
+    padding: 0.2rem;
+  }
+
+  .selected-project {
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+  }
+
+  .project-header {
+    width: 100%;
+  }
+
+  .project-info {
+    text-align: center;
+    width: 98%;
+    margin: 0;
+  }
+
+  .card,
+  .skills,
+  .resume {
+    margin-bottom: 0.7rem;
+    border-radius: 30px;
+  }
 }

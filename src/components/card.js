@@ -1,6 +1,6 @@
 import profile from '../resources/20161111_112325.png';
 import { faLinkedinIn } from '@fortawesome/free-brands-svg-icons';
-import { faUser } from '@fortawesome/free-solid-svg-icons'
+import { faUser, faAt } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 const Card = () => {
@@ -26,6 +26,7 @@ const Card = () => {
                     <ul className="social-list">
                         <li className="secondary-text"><a className="social-link" href="https://www.linkedin.com/in/julio-cesar-casta%C3%B1o-almanzar-451122212/"><FontAwesomeIcon className="icon" icon={faLinkedinIn} />Linkedin</a></li>
                         <li className="secondary-text"><a className="social-link" href="https://julioportfol.herokuapp.com/"><FontAwesomeIcon className="icon" icon={faUser} />Personal Website</a></li>
+                        <li className="secondary-text"><a className="social-link" href="Mailto:julio.ccatb@gmail.com?subject=PF:"><FontAwesomeIcon className="icon" icon={faAt} />Julio.ccatb@gmail.com</a></li>
                     </ul>
                 </div>
             </div>

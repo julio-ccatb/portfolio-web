@@ -14,7 +14,7 @@ function App() {
       <div className="container">
         <div className="main">
           <GeneralContextProvider>
-            <ContactBall />
+            {/* <ContactBall /> */}
             <Card />
             <SkillsCard />
             <ResumeSection />

@@ -15,7 +15,8 @@ const ContactBall = () => {
 
     return (
         <div onClick={Toggle} className="contactball">
-            <FontAwesomeIcon className="ball-icon" color="white" size="2x" icon={faPaperPlane} />
+            {isOpen ? <FontAwesomeIcon className="ball-icon" color="white" size="2x" icon={faPaperPlane} />
+                : <FontAwesomeIcon className="ball-icon" rotate={180} color="white" size="2x" icon={faPaperPlane} />}
         </div>)
 }
 
