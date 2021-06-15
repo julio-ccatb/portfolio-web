@@ -540,7 +540,18 @@ p {
   width: fit-content;
   background: transparent;
   justify-content: space-evenly;
-  color: #5e5e5e;
+  color: #202020;
+  animation: buttonGlow 3s;
+  transition: ease-in-out;
+}
+
+@keyframes buttonGlow {
+  0% {
+    color: #c88341;
+  }
+  100% {
+    color: #202020;
+  }
 }
 
 .btn:hover {
