@@ -12,9 +12,9 @@ function App() {
       <header className="App-header">
       </header>
       <div className="container">
-        <ContactBall />
         <div className="main">
           <GeneralContextProvider>
+            <ContactBall />
             <Card />
             <SkillsCard />
             <ResumeSection />

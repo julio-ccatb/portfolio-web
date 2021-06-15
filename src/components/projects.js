@@ -1,48 +1,85 @@
-import { useContext, useState } from "react"
+import { useContext, useEffect, useState } from "react"
 import { GeneralContext } from "../context/general.context"
+import NotAvilable from "../resources/Image-Not-Available.png"
 import SkillItem from "./subComponents/skilli_item"
+import axios from "axios";
 
 
 
 const Projects = () => {
 
 
-    const { skills1 } = useContext(GeneralContext)
-    let initialState = skills1
+    const { skills1 } = useContext(GeneralContext);
 
-    const [index, setindex] = useState([1, 2, 3, 5])
+
+    const [index, setindex] = useState([1, 7, 3]);
+    const [projects, setProjects] = useState([]);
+    const [projecSelected, setProjectSelected] = useState();
+
+    useEffect(async () => {
+
+        try {
+            let { data } = await axios.get("https://node-app-pf.herokuapp.com/api/projects");
+            setProjects(data);
+        }
+        catch (err) {
+            console.error(err)
+        }
+    }, [])
 
     return (
         <div className="projects">
             <div className="projects-wraper">
                 <h2 className="primary-text header">Projects</h2>
-                <div className="selected-project">
-                    <div className="project-header">
-                        <img className="project-img" alt=""
-                            src="https://media.jscrambler.com/meta-tag-images/facebook-link-webpage-integrity.png" />
-                    </div>
-                    <div className="project-info">
-                        <h3 className="project-name primary-text header">project name</h3>
-                        <p className="project-description">Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto. Lorem Ipsum ha sido el texto de relleno estándar de las industrias desde el año 1500, cuando un impresor (N. del T. persona que se dedica a la imprenta) desconocido usó una galería de textos y los mezcló de tal manera que logró hacer un libro de textos especimen </p>
-                        <div className="tecnologies">
-                            {
-                                index.map(id => {
-                                    return (
-                                        <SkillItem
-                                            iconSize="2x"
-                                            customClass={'badge'}
-                                            link="#"
-                                            skill={skills1.find(element => element.id === id)}
-                                        />
-                                    )
-                                })
-                            }
+                {
+                    projecSelected ? (<div key={projecSelected._id} className="selected-project">
+                        <div key={projecSelected._id} className="project-header">
+                            <img className="project-img" alt={projecSelected.name}
+                                src={`${projecSelected.img ? projecSelected.img : NotAvilable}`} />
                         </div>
-                        <div className="btns">
-                            <a className="btn-acces goto-0" href="#">Go To</a>
-                            <a className="btn-acces goto-1" href="#">Repo</a>
+                        <div className="project-info">
+                            <h3 className="project-name primary-text header">{projecSelected.name}</h3>
+                            <p className="project-description">{projecSelected.description}</p>
+                            <div className="tecnologies">
+                                {
+                                    index.map(id => {
+                                        return (
+                                            <SkillItem
+                                                iconSize="2x"
+                                                customClass={'badge'}
+                                                link="#"
+                                                skill={skills1.find(element => element.id === id)}
+                                            />
+                                        )
+                                    })
+                                }
+                            </div>
+                            <div className="btns">
+                                <a className="btn-acces goto-0" href="#">Go To</a>
+                                <a className="btn-acces goto-1" href={projecSelected.url} >Repo</a>
+                            </div>
                         </div>
-                    </div>
+                    </div>) : <></>
+                }
+                <div className="project-dash">
+                    {
+                        projects.map((project) => {
+
+                            return (
+                                <div
+                                    onClick={() => {
+                                        setProjectSelected(project);
+                                    }}
+                                    key={project._id}
+                                    className="project-mini">
+                                    <img className="project-header project-img img-mini" src={`${project.img ? project.img : NotAvilable}`} ></img>
+                                    <h3 className="project-mini-name">{project.name}</h3>
+                                </div>
+                            )
+                        })
+                    }
+
+
                 </div>
             </div>
         </div>

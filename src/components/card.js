@@ -24,8 +24,8 @@ const Card = () => {
                 <div className="card-body">
 
                     <ul className="social-list">
-                        <li className="secondary-text"><a className="social-link" href="#"><FontAwesomeIcon className="icon" icon={faLinkedinIn} />Linkedin</a></li>
-                        <li className="secondary-text"><a className="social-link" href="#"><FontAwesomeIcon className="icon" icon={faUser} />Personal Website</a></li>
+                        <li className="secondary-text"><a className="social-link" href="https://www.linkedin.com/in/julio-cesar-casta%C3%B1o-almanzar-451122212/"><FontAwesomeIcon className="icon" icon={faLinkedinIn} />Linkedin</a></li>
+                        <li className="secondary-text"><a className="social-link" href="https://julioportfol.herokuapp.com/"><FontAwesomeIcon className="icon" icon={faUser} />Personal Website</a></li>
                     </ul>
                 </div>
             </div>
