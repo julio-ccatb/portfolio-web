@@ -20,7 +20,7 @@ const ResumeSection = () => {
     }
 
     const education = [
-        { date_range: '2019-TODAY', city: 'Santo Domingo', achivement: 'Studiying:', grade: 'Computer Sciences', place: 'APEC University' },
+        { date_range: '2017-TODAY', city: 'Santo Domingo', achivement: 'Studiying:', grade: 'Computer Sciences', place: 'APEC University' },
         { date_range: '2016-2017', city: 'Santo Domingo', achivement: 'Title:', grade: 'Intermediate English', place: 'Dominican American Language School' },
         { date_range: '2012-2016', city: 'Santo Domingo', achivement: 'Title:', grade: 'Bachelor', place: 'Colegio Dominicano de La Salle' },
     ]

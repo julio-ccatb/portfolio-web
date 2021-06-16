@@ -1,23 +1,25 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import { faPaperPlane } from "@fortawesome/free-regular-svg-icons"
+import { faPaperPlane, faFilePdf } from "@fortawesome/free-regular-svg-icons"
 import { useState } from "react"
 
 const ContactBall = () => {
 
 
-    const [isOpen, setisOpen] = useState(false);
-
-    const Toggle = () => {
-        setisOpen(!isOpen);
-        console.log('isOpen', isOpen)
-    }
-
-
     return (
-        <div onClick={Toggle} className="contactball">
-            {isOpen ? <FontAwesomeIcon className="ball-icon" color="white" size="2x" icon={faPaperPlane} />
-                : <FontAwesomeIcon className="ball-icon" rotate={180} color="white" size="2x" icon={faPaperPlane} />}
-        </div>)
+        <a
+            href="https://node-app-pf.herokuapp.com/api/cvitae"
+            target="_blank">
+
+            <div className="contactball">
+                <FontAwesomeIcon
+
+                    className="ball-icon"
+                    color="white"
+                    size="2x"
+                    icon={faFilePdf} />
+            </div>
+        </a>
+    )
 }
 
 export default ContactBall;

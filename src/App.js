@@ -1,5 +1,4 @@
 import Card from "./components/card";
-import ContactBall from "./components/subComponents/contactball";
 import Projects from "./components/projects";
 import ResumeSection from "./components/resume";
 import SkillsCard from "./components/skills";
@@ -14,7 +13,7 @@ function App() {
       <div className="container">
         <div className="main">
           <GeneralContextProvider>
-            {/* <ContactBall /> */}
+
             <Card />
             <SkillsCard />
             <ResumeSection />

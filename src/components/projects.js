@@ -39,7 +39,7 @@ const Projects = () => {
                         </div>
                         <div className="project-info">
                             <h3 className="project-name primary-text header">{projecSelected.name}</h3>
-                            <p className="project-description">{projecSelected.description}</p>
+                            {projecSelected.description ? <p className="project-description">{projecSelected.description}</p> : <></>}
                             <div className="tecnologies">
                                 {
                                     index.map(id => {
@@ -55,8 +55,8 @@ const Projects = () => {
                                 }
                             </div>
                             <div className="btns">
-                                <a className="btn-acces goto-0" href="#">Go To</a>
-                                <a className="btn-acces goto-1" href={projecSelected.url} >Repo</a>
+                                <a target="_blank" className="btn-acces goto-1" href={projecSelected.url} >Repo</a>
+                                <a target="_blank" className="btn-acces goto-0" href="#">Go To</a>
                             </div>
                         </div>
                     </div>) : <></>
@@ -71,8 +71,9 @@ const Projects = () => {
                                         setProjectSelected(project);
                                     }}
                                     key={project._id}
-                                    className="project-mini">
-                                    <img className="project-header project-img img-mini" src={`${project.img ? project.img : NotAvilable}`} ></img>
+                                    className="project-mini badge">
+                                    <img className="project-header project-img img-mini"
+                                        src={`${project.img ? project.img : NotAvilable}`} ></img>
                                     <h3 className="project-mini-name">{project.name}</h3>
                                 </div>
                             )
